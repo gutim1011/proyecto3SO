@@ -2,6 +2,7 @@
 
 Nuestro programa es una aplicación en C++ que permite procesar imágenes aplicando rotación y escalado, con la posibilidad de comparar el uso de memoria y tiempos de procesamiento utilizando un sistema de asignación convencional o el sistema **Buddy System**.  
 Desde su última versión, **incluye procesamiento paralelo con OpenMP**, lo que mejora significativamente el rendimiento en imágenes de gran tamaño.
+
 ---
 
 ## Requisitos
@@ -81,8 +82,10 @@ Después de cada ejecución, el programa imprimirá:
 
 ---
 ## Rendimiento y Paralelismo
+
 Gracias a OpenMP, el programa ahora puede aprovechar múltiples núcleos del procesador.
 Esto reduce significativamente el tiempo de ejecución en operaciones pesadas como rotación y escalado.
+
 ---
 
 ## Autores
