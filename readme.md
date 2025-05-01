@@ -1,13 +1,14 @@
 # Programa
 
-Nuestro programa es una aplicación en C++ que permite procesar imágenes aplicando rotación y escalado, con la posibilidad de comparar el uso de memoria y tiempos de procesamiento utilizando un sistema de asignación convencional o el sistema **Buddy System**.
-
+Nuestro programa es una aplicación en C++ que permite procesar imágenes aplicando rotación y escalado, con la posibilidad de comparar el uso de memoria y tiempos de procesamiento utilizando un sistema de asignación convencional o el sistema **Buddy System**.  
+Desde su última versión, **incluye procesamiento paralelo con OpenMP**, lo que mejora significativamente el rendimiento en imágenes de gran tamaño.
 ---
 
 ## Requisitos
 
 - C++17 o superior
-- [STB Image Libraries](https://github.com/evalenciEAFIT/courses/tree/main/SistemasOperativos/LlamadaSistema/Memoria/buddySystem): `stb_image.h`, `stb_image_write.h`. Ya están incluidos en la carpeta src
+- OpenMP (normalmente incluido con `g++` en Linux/WSL)
+- [STB Image Libraries](https://github.com/evalenciEAFIT/courses/tree/main/SistemasOperativos/LlamadaSistema/Memoria/buddySystem): `stb_image.h`, `stb_image_write.h` (ya están incluidos en `src/`)
 - `make`
 - g++ (recomendado en Linux o WSL si estás en Windows)
 
@@ -78,6 +79,10 @@ Después de cada ejecución, el programa imprimirá:
 - Memoria usada (con y sin Buddy System)
 - Confirmation de la imagen guardada
 
+---
+## Rendimiento y Paralelismo
+Gracias a OpenMP, el programa ahora puede aprovechar múltiples núcleos del procesador.
+Esto reduce significativamente el tiempo de ejecución en operaciones pesadas como rotación y escalado.
 ---
 
 ## Autores
