@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cstring>
 #include <algorithm>
-
+#include <omp.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -141,6 +141,7 @@ void ImageProcessor::rotateImage(double angleDegrees) {
     double oldCX = width / 2.0, oldCY = height / 2.0;
     double newCX = newW / 2.0, newCY = newH / 2.0;
 
+    #pragma omp parallel for collapse(2)
     for (int y = 0; y < newH; ++y) {
         for (int x = 0; x < newW; ++x) {
             double dx = x - newCX;
@@ -182,6 +183,8 @@ void ImageProcessor::scaleImage(double factor) {
     double xRatio = width / static_cast<double>(newW);
     double yRatio = height / static_cast<double>(newH);
 
+    
+    #pragma omp parallel for collapse(2)
     for (int y = 0; y < newH; ++y) {
         for (int x = 0; x < newW; ++x) {
             double srcX = x * xRatio;
